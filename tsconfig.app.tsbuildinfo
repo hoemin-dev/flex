@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/data/mockrooms.ts","./src/host/dock.test.ts","./src/host/dock.ts","./src/providers/mockorganization.ts","./src/providers/organization.ts","./src/types/chat.ts"],"version":"5.7.3"}
