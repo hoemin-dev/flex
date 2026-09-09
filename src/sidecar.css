@@ -1,0 +1,52 @@
+/* The host supplies the height. The preview rail stands in for Mona-HUB. */
+.hub-shell { --hub-width: 52px; --flex-width: min(440px, calc(100vw - var(--hub-width))); height: 100%; width: fit-content; max-width: 100%; margin-left: auto; display: flex; background: #121614; border: 1px solid #343c36; overflow: hidden; }
+.sidecar-clip { width: var(--flex-width); min-width: 0; overflow: hidden; transition: width 220ms ease; }
+.is-collapsed .sidecar-clip { width: 0; }
+.sidecar { width: var(--flex-width); border: 0; height: 100%; position: relative; }
+.sidecar .workspace { grid-template-columns: minmax(0, 1fr); }
+.sidecar .titlebar { padding-left: 14px; }
+.sidecar .brand .sidecar-caption { font-size: 10px; letter-spacing: 0; color: #89958d; margin-left: 5px; }
+.sidecar .chat-header { padding: 12px 14px; min-height: 75px; gap: 6px; }
+.sidecar .room-heading { flex: 1; }
+.sidecar .room-heading > div { width: 100%; }
+.room-picker { display: flex; align-items: center; gap: 6px; background: transparent; padding: 3px 0 6px; max-width: 100%; text-align: left; }
+.room-picker > svg { flex: none; color: #a2b497; }
+.sidecar .room-picker h1 { font-size: 14px; margin: 0; }
+.sidecar .members-toggle { padding: 6px; gap: 4px; border: 0; font-size: 10px; }
+.sidecar .members-toggle > span { display: inline; }
+.sidecar .connection-status { margin-top: 2px; }
+.sidecar .message { padding-left: 14px; padding-right: 14px; gap: 9px; }
+.sidecar .message-gutter { width: 29px; }
+.sidecar .avatar { width: 28px; height: 28px; border-radius: 9px; font-size: 11px; }
+.sidecar .message-meta { flex-wrap: wrap; gap: 5px; }
+.sidecar .message-meta time { white-space: nowrap; }
+.sidecar .message-body p { font-size: 14px; line-height: 1.75; }
+.sidecar .history-caption { padding: 0 14px 6px; font-size: 9px; flex-wrap: wrap; }
+.sidecar .day-divider { margin-left: 14px; margin-right: 14px; }
+.sidecar .event-message { margin: 13px 14px 13px 52px; padding: 9px 10px; gap: 8px; }
+.sidecar .event-heading { flex-wrap: wrap; gap: 5px; }
+.sidecar .system-message { padding: 10px 14px; }
+.sidecar .composer-wrap { padding: 10px 12px 12px; border-top: 1px solid var(--border); }
+.sidecar .composer-hint > span:first-child { display: none; }
+.sidecar .composer-hint { justify-content: flex-end; }
+.sidecar .connection-banner { padding: 7px 12px; font-size: 11px; }
+.sidecar .panel-dialog { inset: 39px 53px auto auto; width: calc(var(--flex-width) - 18px); height: min(480px, calc(100dvh - 58px)); border-radius: 7px; box-shadow: 0 12px 32px #0006; }
+.sidecar .panel-dialog::backdrop { background: #080d0960; }
+.sidecar .workspace-heading { padding: 16px 6px; }
+.sidecar .workspace-heading small, .sidecar .workspace-logo, .sidecar .nav-bottom > span { display: none; }
+.sidecar .workspace-heading b { font-size: 12px; }
+.sidecar .mobile-only { display: inline-grid; }
+.sidecar .room-search { margin-bottom: 16px; }
+.hub-bar { width: var(--hub-width); flex: none; display: flex; flex-direction: column; align-items: center; border-left: 1px solid var(--border); background: #121614; padding: 15px 4px 14px; z-index: 1; }
+.hub-monogram { font-size: 23px; font-weight: 800; letter-spacing: -2px; color: #d5e3cb; position: relative; line-height: 26px; }
+.hub-monogram span { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; position: absolute; right: -6px; top: 2px; }
+.hub-wordmark { font-size: 8px; letter-spacing: 2px; color: #8f9c91; margin: 5px 0 0 2px; }
+.hub-rule { height: 1px; width: 23px; background: var(--border); margin: 21px 0 15px; }
+.hub-flex { width: 40px; min-height: 53px; background: transparent; color: #89998b; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; position: relative; }
+.hub-flex span { font-size: 9px; }
+.hub-flex.active { color: #c4dda9; background: #263023; }
+.hub-flex.active::before { content: ''; position: absolute; left: -5px; height: 20px; width: 2px; background: #b5ce9d; border-radius: 2px; }
+.hub-bottom { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 7px; letter-spacing: 1px; color: #7e8d82; }
+.hub-presence { width: 5px; height: 5px; border-radius: 50%; background: #9caf8c; }
+@media (prefers-reduced-motion: reduce) { .sidecar-clip { transition: none; } }
+.sidecar .mention-entry { display: flex; align-items: center; font-size: 11px; color: var(--accent); }

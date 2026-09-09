@@ -5,7 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:worker": "wrangler dev",
     "build": "tsc -b && vite build",
+    "build:worker": "tsc -p tsconfig.worker.json",
+    "db:migrate:local": "wrangler d1 migrations apply flextrans-d --local",
+    "db:migrate:remote": "wrangler d1 migrations apply flextrans-d --remote",
+    "verify:worker": "node scripts/verify-worker.mjs",
     "test": "vitest run",
     "tauri": "tauri"
   },
@@ -16,12 +21,14 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260823.1",
     "@tauri-apps/cli": "^2.8.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "~5.7.2",
     "vite": "^6.0.7",
-    "vitest": "^2.1.8"
+    "vitest": "^2.1.8",
+    "wrangler": "^4.125.0"
   }
 }

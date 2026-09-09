@@ -1,0 +1,9 @@
+.backend-error {
+  margin: 8px 0;
+  padding: 7px 9px;
+  border: 1px solid rgba(201, 129, 112, .25);
+  border-radius: 7px;
+  background: rgba(201, 129, 112, .08);
+  color: #cfa092;
+  font-size: 9px;
+}

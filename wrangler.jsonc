@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "flextrans-api-d",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-08-24",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "flextrans-d",
+      "database_id": "72756a7e-6e04-40b0-b2f4-f6ea03f11ba2",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ROOMS",
+        "class_name": "FlexRoomDO"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["FlexRoomDO"]
+    }
+  ],
+  "vars": {
+    "DEV_ALLOW_MOCK_IDENTITY": "true"
+  }
+}
